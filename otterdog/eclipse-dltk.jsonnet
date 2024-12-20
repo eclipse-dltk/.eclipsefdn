@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-dltk') {
+orgs.newOrg('technology.dltk', 'eclipse-dltk') {
   settings+: {
     blog: "htttp://www.eclipse.org/dltk",
     description: "",
