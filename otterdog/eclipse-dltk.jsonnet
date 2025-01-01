@@ -10,6 +10,17 @@ orgs.newOrg('technology.dltk', 'eclipse-dltk') {
       default_workflow_permissions: "write",
     },
   },
+  teams+: [
+    orgs.newTeam('Owners') {
+      description: null,
+      members+: [
+        "eclipsewebmaster",
+        "panchenko",
+        "zulus"
+      ],
+      privacy: "secret",
+    },
+  ],
   webhooks+: [
     orgs.newOrgWebhook('https://ci.eclipse.org/dltk/github-webhook/') {
       content_type: "json",
@@ -20,6 +31,8 @@ orgs.newOrg('technology.dltk', 'eclipse-dltk') {
     },
   ],
   _repositories+:: [
+    orgs.newRepo('.github') {
+    },
     orgs.newRepo('dltk.all') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -70,10 +83,5 @@ orgs.newOrg('technology.dltk', 'eclipse-dltk') {
         enabled: false,
       },
     },
-  ],
-} + {
-  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
-  _repositories+:: [
-    orgs.newRepo('.github')
   ],
 }
