@@ -12,7 +12,6 @@ orgs.newOrg('technology.dltk', 'eclipse-dltk') {
   },
   teams+: [
     orgs.newTeam('Owners') {
-      description: null,
       members+: [
         "eclipsewebmaster",
         "panchenko",
